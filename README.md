@@ -35,10 +35,10 @@ We analyze experimental data from ISI sequences recorded in https://opg.optica.o
 
 ## Generating the colored noise dataset (optional)
 - The ANN is trained in a dataset composed of colored noised signals;
-- By running the code <code>generate_colored_noise.py</code> will generate 50,000 colored noises with random values of alpha varying from -4 to 4;
+- By running the code <code>generate_colored_noise.py</code> will generate 50,000 colored noises with random values of $\alpha$ varying from -4 to 4;
 - The code evaluates the 24 ordinal probabilities (D=4) and the permutation entropy for each colored noise;
 - The code generates three files:
-1. <code>cn_a_data.dat</code> which corresponds to the values of alpha for each signal -- labels;
+1. <code>cn_a_data.dat</code> which corresponds to the values of $\alpha$ for each signal -- labels;
 2. <code>cn_p_data.dat</code> which corresponds to the 24 ordinal probabilities for each signal -- features;
 3. <code>cn_s_data.dat</code> which corresponds to the permutation entropy for each signal;
 *Please note that when utilizing this step, it is important to cite the repository https://github.com/felixpatzelt/colorednoise for proper acknowledgment.*
@@ -50,11 +50,12 @@ This step can be skipped if you want to download the files <code>.dat</code> fil
 - Bu running the code <code>neural_network_0.py</code> the algorithm will read the file <code>cn_p_data.dat</code> and <code>cn_a_data.dat</code> which correspond to the features and its labels, respectively;
 - This dataset is segmented into test and training groups; 
 - The ANN is composed of two dense layers: the first layer has 64 neurons with <code>ReLU</code> activation function, and the second layer has a single neuron, which is the output layer. The model is then compiled using the <code>RMSprop</code> optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as the evaluation metric.
-- After the training stage, the ANN is ready to estimate the alpha value of an external signal just with the ordinal probabilities information;
+- After the training stage, the ANN is ready to estimate the $\alpha$ value of an external signal just with the ordinal probabilities information;
 - The final ANN and its parameters are saved in <code>model.h5</code> file, which can be loaded to be used in distinct data.</br>
-*We have to mention that, as we have shown in <code>https://doi.org/10.1038/s41598-021-95231-z</code>, the alpha value of a colored noise (and stochastic process in general) carries information about the temporal correlations of the signal. In the case of deterministic signals, alpha carries useful information that can be used, for example, to distinguish between noise and chaos. In addition, we do not argue that the ISIs have an alpha coefficient that can be interpreted in terms of (or be consistent with) the slope of the power spectrum. We argue that the alpha value returned by the ML algorithm carries information about the ISI sequence, which in turn, encodes information about the input signal applied to the laser current.*
+*We have to mention that, as we have shown in <code>https://doi.org/10.1038/s41598-021-95231-z</code>, the $\alpha$ value of a colored noise (and stochastic process in general) carries information about the temporal correlations of the signal. In the case of deterministic signals, $\alpha$ carries useful information that can be used, for example, to distinguish between noise and chaos. In addition, we do not argue that the ISIs have an $\alpha$ coefficient that can be interpreted in terms of (or be consistent with) the slope of the power spectrum. We argue that the $\alpha$ value returned by the ML algorithm carries information about the ISI sequence, which in turn, encodes information about the input signal applied to the laser current.*
 
-## Data analysis and Figures
+## Data Analysis and Figures
+
 
 
 ### Citation
