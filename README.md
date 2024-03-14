@@ -52,11 +52,13 @@ This step can be skipped if you want to download the files <code>.dat</code> fil
 - The ANN is composed of two dense layers: the first layer has 64 neurons with <code>ReLU</code> activation function, and the second layer has a single neuron, which is the output layer. The model is then compiled using the <code>RMSprop</code> optimizer, mean squared error (MSE) as the loss function, and mean absolute error (MAE) as the evaluation metric.
 - After the training stage, the ANN is ready to estimate the $\alpha$ value of an external signal just with the ordinal probabilities information;
 - The final ANN and its parameters are saved in <code>model.h5</code> file, which can be loaded to be used in distinct data.</br>
-*We have to mention that, as we have shown in <code>https://doi.org/10.1038/s41598-021-95231-z</code>, the $\alpha$ value of a colored noise (and stochastic process in general) carries information about the temporal correlations of the signal. In the case of deterministic signals, $\alpha$ carries useful information that can be used, for example, to distinguish between noise and chaos. In addition, we do not argue that the ISIs have an $\alpha$ coefficient that can be interpreted in terms of (or be consistent with) the slope of the power spectrum. We argue that the $\alpha$ value returned by the ML algorithm carries information about the ISI sequence, which in turn, encodes information about the input signal applied to the laser current.*
+*We have to mention that, as we have shown in https://doi.org/10.1038/s41598-021-95231-z, the $\alpha$ value of a colored noise (and stochastic process in general) carries information about the temporal correlations of the signal. In the case of deterministic signals, $\alpha$ carries useful information that can be used, for example, to distinguish between noise and chaos. In addition, we do not argue that the ISIs have an $\alpha$ coefficient that can be interpreted in terms of (or be consistent with) the slope of the power spectrum. We argue that the $\alpha$ value returned by the ML algorithm carries information about the ISI sequence, which in turn, encodes information about the input signal applied to the laser current.*
 
 ## Data Analysis and Figures
-
-
+The code <code>data_analysis_figure_4.py</code>  is separated in X steps:
+1. The code loads the ANN <code>model.keras</code> generated in the previous step;
+2. The code reads the whole dataset (70 frequency values for 5 distinct current values) and estimates the $\alpha$ value for each;
+3. If everything runs accordingly, a figure called <code>figu_4.png</code>, which is analogous to Figure 4 of the manuscript, is generated with the values of $\alpha$ and $H$ (permutation entropy) of the data set, which summarizes the results of the article.
 
 ### Citation
 
