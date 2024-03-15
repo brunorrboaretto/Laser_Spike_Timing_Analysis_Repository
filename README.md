@@ -1,6 +1,13 @@
 # Laser_Spike_Timing_Analysis_Repository
  This repository hosts the code and resources associated with the recently accepted paper titled "Characterizing the spike timing of a chaotic laser by using ordinal analysis and machine learning."
  XXXXX INCLUDE THE INFORMATION OF THE PAPER HERE.... DOI EDICTOS PICKS BLA BLA BAL FOCUS ISSUE 
+
+<code>DOI: 10.1063/5.0193967</code>
+
+Volume #:	34
+Issue #:	4
+Issue:	2024-04-30
+ 
 ## Paper Overview
 
 Semiconductor lasers, renowned for their speed, energy efficiency, and affordability, manifest a diverse array of complex dynamic behaviors under optical feedback. This diversity stems from the interplay of three factors: nonlinear light-matter interactions within the laser cavity, high dimensionality of the phase space introduced by feedback delay time, and stochasticity due to quantum spontaneous emission noise and other sources. Leveraging these characteristics, semiconductor lasers with optical feedback offer an ideal platform for controlled experiments aimed at uncovering nonlinear, stochastic, and time delay-induced phenomena. Additionally, they hold promise for innovative photonic applications such as random number generation and information processing. One extensively studied feedback-induced dynamical regime is the low-frequency fluctuations regime, characterized by spiking laser output. In this study, we investigate the statistical properties of the timing of optical spikes by analyzing experimental sequences of inter-spike intervals (ISIs). Employing a recently proposed technique that integrates nonlinear time series analysis and machine learning, we demonstrate that the ISI sequences exhibit statistical ordinal properties akin to Flicker noise.
@@ -67,6 +74,7 @@ The code <code>data_analysis_figure_4.py</code> is divided into X steps:
 If you find this work helpful for your research, please consider reading and citing:
 
 - Boaretto, B. R. R., Macau, E. E. N., & Masoller, C. (2024)."Characterizing the spike timing of a chaotic laser by using ordinal analysis and machine learning." *Chaos: An Interdisciplinary Journal of Nonlinear Science*, XXX, XXXXX. </br>
+
 
 In addition, the whole methodology used in this work has been originated and improved in these two works: 
 - Boaretto, B. R. R., Budzinski, R. C., Rossi, K. L., Prado, T. L., Lopes, S. R., & Masoller, C. (2021). "Discriminating Chaotic and Stochastic Time Series using Permutation Entropy and Artificial Neural Networks." *Scientific Reports*, 11(1), 15789.
