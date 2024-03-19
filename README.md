@@ -1,12 +1,10 @@
 # Laser_Spike_Timing_Analysis_Repository
  This repository hosts the code and resources associated with the recently accepted paper titled "Characterizing the spike timing of a chaotic laser by using ordinal analysis and machine learning."
- XXXXX INCLUDE THE INFORMATION OF THE PAPER HERE.... DOI EDICTOS PICKS BLA BLA BAL FOCUS ISSUE 
-
-<code>DOI: 10.1063/5.0193967</code>
-
-Volume #:	34
-Issue #:	4
-Issue:	2024-04-30
+<!-- a normal html comment //XXXXX INCLUDE THE INFORMATION OF THE PAPER HERE.... DOI EDICTOS PICKS BLA BLA BAL FOCUS ISSUE '  <code>DOI: 10.1063/5.0193967</code>
+ -->
+<!--Volume #:	34-->
+<!--Issue #:	4-->
+<!--Issue:	2024-04-30-->
  
 ## Paper Overview
 
@@ -28,7 +26,7 @@ We analyze experimental data from ISI sequences recorded in https://opg.optica.o
 - Download the dataset file <code>Sinusoidal_full_TS.zip</code> (210.2 MB) from https://doi.org/10.5281/zenodo.5913506.
 - Extract the <code>.zip</code> file to obtain the folder <code>Sinusoidal_full_TS/</code>, which contains four folders: <code>Gain_40</code>, <code>Gain_60</code>, <code>Gain_80</code>, and <code>Gain_100</code>. Each folder corresponds to a specific modulation amplitude of the laser in arbitrary units.
 - In this work, we have selected the folder <code>Gain_100</code>.
-- The data is in <code>.mat</code> format. Running the command <code>python3 extract.py</code> will read the <code>.mat</code> files and convert them into <code>.dat</code> format, writing each file into the <code>Sinusoidal_full_TS/</code> directory. Following this step, the four <code>Gain_XX</code> folders can be ignored (removed)). </br>
+- The data is in <code>.mat</code> format. Running the command <code>python3 extract.py</code> will read the <code>.mat</code> files and convert them into <code>.dat</code> format, writing each file into the <code>Sinusoidal_full_TS/</code> directory. Following this step, the four <code>Gain_XX</code> folders can be ignored (removed). </br>
 If everything works correctly, at the end of this step, it will result in 350 <code>.dat</code> files, each one representing an ISI laser sequence with 70 frequency values for 5 distinct current values.
 
 ## Python libraries:
@@ -59,15 +57,16 @@ This step can be skipped if you want to download the <code>cn_a_data.dat</code> 
 - ANN comprises two dense layers: the first layer with 64 neurons utilizing the <code>ReLU</code> activation function, and the second layer with a single neuron serving as the output layer. Following this, the model is compiled using the <code>RMSprop</code> optimizer, with mean squared error (MSE) as the loss function and mean absolute error (MAE) as the evaluation metric;
 - Upon completion of the training stage, the ANN is capable of estimating the $\alpha$ value of an external signal solely based on the ordinal probabilities information;
 - The final ANN and its parameters are saved in the <code>model.keras</code> file, which can be loaded for use with different data.</br>
-*We have to mention that, as we have shown in https://doi.org/10.1038/s41598-021-95231-z, the $\alpha$ value of a colored noise (and stochastic process in general) carries information about the temporal correlations of the signal. In the case of deterministic signals, $\alpha$ carries useful information that can be used, for example, to distinguish between noise and chaos. In addition, we do not argue that the ISIs have an $\alpha$ coefficient that can be interpreted in terms of (or be consistent with) the slope of the power spectrum. We argue that the $\alpha$ value returned by the ML algorithm carries information about the ISI sequence, which in turn, encodes information about the input signal applied to the laser current.*
+
+*We have to mention that, as we have shown in https://doi.org/10.1038/s41598-021-95231-z, the* $\alpha$ *value of a colored noise (and stochastic process in general) carries information about the temporal correlations of the signal. In the case of deterministic signals,* $\alpha$ *carries useful information that can be used, for example, to distinguish between noise and chaos. In addition, we do not argue that the ISIs have an* $\alpha$ *coefficient that can be interpreted in terms of (or be consistent with) the slope of the power spectrum. We argue that the* $\alpha$ *value returned by the ML algorithm carries information about the ISI sequence, which in turn, encodes information about the input signal applied to the laser current.*
 
 This step also can be skipped if you want to download the ANN <code>model.keras</code> directly from this repository.
 
 ## Data Analysis and Figures
-The code <code>data_analysis_figure_4.py</code> is divided into X steps:
+The code <code>data_analysis_figure_4.py</code> is divided into 3 steps:
 1. The code loads the ANN <code>model.keras</code> generated in the previous step.
 2. The code reads the entire dataset (comprising 70 frequency values for 5 distinct current values) and estimates the $\alpha$ value for each.
-3. If everything runs smoothly, a figure named <code>figu_4.png</code>, analogous to Figure 4 in the manuscript, is generated. This figure displays the $\alpha$ and $H$ (permutation entropy) values of the dataset, summarizing the results of the article.
+3. If everything runs smoothly, a figure named <code>fig_4.png</code>, analogous to Figure 4 in the manuscript, is generated. This figure displays the $\alpha$ and $H$ (permutation entropy) values of the dataset, summarizing the results of the article.
 
 ### Citation
 
