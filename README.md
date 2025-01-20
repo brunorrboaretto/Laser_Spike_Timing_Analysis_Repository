@@ -72,8 +72,7 @@ The code <code>data_analysis_figure_4.py</code> is divided into 3 steps:
 
 If you find this work helpful for your research, please consider reading and citing:
 
-- Boaretto, B. R. R., Macau, E. E. N., & Masoller, C. (2024)."Characterizing the spike timing of a chaotic laser by using ordinal analysis and machine learning." *Chaos: An Interdisciplinary Journal of Nonlinear Science*, XXX, XXXXX. </br>
-
+- Boaretto, B. R. R., Macau, E. E. N., & Masoller, C. (2024)."Characterizing the spike timing of a chaotic laser by using ordinal analysis and machine learning." *Chaos: An Interdisciplinary Journal of Nonlinear Science*,  34, 043108 (2024). </br>
 
 In addition, the whole methodology used in this work has been originated and improved in these two works: 
 - Boaretto, B. R. R., Budzinski, R. C., Rossi, K. L., Prado, T. L., Lopes, S. R., & Masoller, C. (2021). "Discriminating Chaotic and Stochastic Time Series using Permutation Entropy and Artificial Neural Networks." *Scientific Reports*, 11(1), 15789.
